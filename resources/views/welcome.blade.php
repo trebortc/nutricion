@@ -5,13 +5,13 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Medilab Bootstrap Template - Index</title>
+  <title>Nutrición</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="{{ URL::to('/') }}/assets/img/favicon.png" rel="icon"> 
-  <link href="{{ URL::to('/') }}/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="{{ URL::to('/') }}/assets/img/military.png" rel="icon"> 
+  <link href="{{ URL::to('/') }}/assets/img/military2.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -55,24 +55,25 @@
           @if (Route::has('login'))
               @auth
                 <li>
-                  <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Inicio</a>
+                  <a class="nav-link scrollto" href="{{ url('/dashboard') }}">&nbsp;Inicio</a>
                 </li>
               @else
                 <li>
-                  <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Ingresar</a>
+                  <a class="nav-link scrollto" href="{{ route('login') }}">&nbsp;Ingresar</a>
                 </li>      
-                  @if (Route::has('register'))
-                </li>  
-                  <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Registrar</a>
-                </li>
-                  @endif
               @endauth
             @endif
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
-
-      <a href="#appointment" class="appointment-btn scrollto"><span class="d-none d-md-inline">Realizar</span> Control</a>
+      @if (Route::has('login'))
+        @auth
+        @else                      
+            @if (Route::has('register'))                 
+            <a class="appointment-btn scrollto" href="{{ route('register') }}"><span class="d-none d-md-inline">Realizar</span> Control</a>              
+            @endif
+        @endauth
+      @endif
 
     </div>
   </header><!-- End Header -->
@@ -80,9 +81,12 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
     <div class="container">
-      <h1>Bienvenido a Medilab</h1>
-      <h2>Somos un grupo de camaradas preocupados por la buena alimentación y salud del compañero</h2>
-      <a href="#about" class="btn-get-started scrollto">Comencemos</a>
+      <div class="row justify-content-md-center">
+        <div class="col-lg-7 offset-lg-3">
+          <h1>Bienvenido a Medilab</h1><br>
+          <h2>Somos un grupo de camaradas preocupados por la buena alimentación y salud del compañero</h2>
+        </div>
+      </div>     
     </div>
   </section><!-- End Hero -->
 
@@ -139,7 +143,7 @@
 
         <div class="row">
           <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch position-relative">
-            <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox play-btn mb-4"></a>
+            <img src="{{ URL::to('/') }}/assets/img/doctors/doctor-paciente-2.jpeg" alt="" class="img-fluid">            
           </div>
 
           <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">

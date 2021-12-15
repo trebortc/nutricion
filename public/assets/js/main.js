@@ -215,3 +215,55 @@
   });
 
 })()
+
+function calcularPeso(){
+  var peso = document.getElementById("peso").value;
+  var estatura = document.getElementById("estatura").value;
+
+  if(!peso || !estatura){
+    alert("Ingrese el peso y la estatura");
+    return;
+  }
+
+  var resultado = peso/(estatura*estatura);
+
+  if(resultado<18.5){
+    //alert("Bajo Peso");caloria
+    document.getElementById("categoria").value = "Bajo de peso";
+    document.getElementById("caloria").value = resultado;
+  }else if(resultado>=18.5 && resultado<=24.9){
+    // alert("Normal");
+    document.getElementById("categoria").value = "Normal";
+    document.getElementById("caloria").value = resultado;
+    var informacion = document.getElementById('informacion');
+    informacion.style.visibility = 'visible';
+    informacion.style.position = 'static';
+  }else if(resultado>=25 && resultado<=29.9){
+    // alert("Sobrepeso");
+    document.getElementById("categoria").value = "Sobrepeso";
+    document.getElementById("caloria").value = resultado;
+    $('#my_element').show();
+  }else if(resultado>=30 && resultado<=34.9){
+    // alert("Obesidad I");
+    document.getElementById("categoria").value = "Obesidad I";
+    document.getElementById("caloria").value = resultado;
+    $('#my_element').show();
+  }else if(resultado>=35 && resultado<=39.9){
+    // alert("Obesidad II");
+    document.getElementById("categoria").value = "Obesidad II";
+    document.getElementById("caloria").value = resultado;
+    $('#my_element').show();
+  }else if(resultado>=40 && resultado<=49.9){
+    // alert("Obesidad III");
+    document.getElementById("categoria").value = "Obesidad III";
+    document.getElementById("caloria").value = resultado;
+    $('#my_element').show();
+  }else if(resultado>=50){
+    // alert("Obsesidad IV");
+    document.getElementById("categoria").value = "Obesidad VI";
+    document.getElementById("caloria").value = resultado;
+    $('#my_element').show();
+  }
+
+
+}

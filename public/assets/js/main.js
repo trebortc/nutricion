@@ -6,7 +6,6 @@
 */
 (function() {
   "use strict";
-  document.getElementById('fecha').valueAsDate = new Date();
   /**
    * Easy selector helper function
    */

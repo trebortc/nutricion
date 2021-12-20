@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Inicio;
+use App\Http\Livewire\Medidas;
+use App\Http\Livewire\TipoComidas;
+use App\Http\Livewire\Alimentos;
+use App\Http\Livewire\Menus;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,6 +22,10 @@ Route::get('/', function () {
 });
 Route::middleware(['auth:sanctum', 'verified'])->group(function(){
     Route::get('/inicio', Inicio::class)->name('inicio');
+    Route::get('/medidas', Medidas::class)->name('medidas');
+    Route::get('/tipo-comidas', TipoComidas::class)->name('tipo-comidas');
+    Route::get('/alimentos', Alimentos::class)->name('alimentos');
+    Route::get('/menus', Menus::class)->name('menus');
     Route::get('/dashboard', function(){
         return view('dashboard');
     })->name('dashboard');
@@ -25,3 +33,4 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function(){
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');
 // })->name('dashboard');
+

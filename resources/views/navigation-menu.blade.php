@@ -9,16 +9,23 @@
                         <img src="{{ URL::to('/') }}/assets/img/escudo_ejercito.png" alt="" width="50" class="img-fluid">    
                     </a>
                 </div>
-
-                <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex"> 
-                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Control') }}
-                    </x-jet-nav-link>                   
-                    <x-jet-nav-link href="{{ route('inicio') }}">
-                        {{ __('Información') }}
-                    </x-jet-nav-link>
-                </div>
+                @if(Auth::user()->name == 'administrador')
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">                    
+                        <x-jet-nav-link href="{{ route('inicio') }}">
+                            {{ __('Información') }}
+                        </x-jet-nav-link>
+                    </div>
+                @else
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                            {{ __('Control') }}
+                        </x-jet-nav-link>                   
+                        <x-jet-nav-link href="{{ route('inicio') }}">
+                            {{ __('Información') }}
+                        </x-jet-nav-link>
+                    </div>
+                @endif
+                
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">

@@ -1,4 +1,4 @@
-<x-jet-dialog-modal wire:model="modal" maxWidth="3xl">
+<x-jet-dialog-modal wire:model="modal" maxWidth="2xl">
     <x-slot name="title">
         {{ __('Crear nuevo menú de comida') }}
     </x-slot>

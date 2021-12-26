@@ -17,6 +17,7 @@ class Menus extends Component
     public $menu_id;
     public $nombre;
     public $menuDetalles = [];
+    public $datos;
     
     public $alimentos = [];
     public $medidas = [];
@@ -43,7 +44,7 @@ class Menus extends Component
 
     public function abrirModal()
     {
-        $this->modal = true; 
+        $this->modal = true;
         $this->alimentos = Alimento::all();
         $this->medidas = Medida::all();
         $this->preparaciones = ['cocida', 'vapor', 'normal'];
@@ -51,6 +52,7 @@ class Menus extends Component
 
     public function cerrarModal(){
         $this->modal = false;
+        $this->limpiarCampos();
     }
 
     public function limpiarCampos()
@@ -68,6 +70,7 @@ class Menus extends Component
         $menu = Menu::findOrFail($id);
         $this->menu_id = $menu->id;
         $this->nombre = $menu->nombre;
+        $this->menuDetalles = $menu->menuDetalles->toArray();
         $this->abrirModal();
     }
 

@@ -9,7 +9,7 @@ class MenuDetalle extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
+    public $fillable = [
         'id',
         'menu_id',
         'alimento_id',

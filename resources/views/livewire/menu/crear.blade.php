@@ -23,8 +23,8 @@
                         <thead>
                             <tr>
                                 <th>Porción</th>
-                                <th>Cantidad</th>
-                                <th>Medida</th>
+                                <th>Cantid.</th>
+                                <th>Medidas</th>
                                 <th>Alimento</th>
                                 <th>Preparación</th>
                                 <th>Acciones</th>
@@ -33,23 +33,24 @@
                         <tbody>
                             @foreach ($menuDetalles as $index => $menuDetalle)
                                 <tr>
-                                    <td class="border px-4 py-2 text-center">
+                                    <td class="border px-5 py-2 text-center">
                                         <input type="number"
-                                            class="text-center"
+                                            class="text-center w-full px-3 border border-gray-300 rounded-l shadow focus:outline-none focus:ring-2 focus:ring-purple-600"
                                             name="menuDetalles[{{$index}}][porcion]"
                                             class="py-2 px-1"
                                             wire:model="menuDetalles.{{$index}}.porcion" />                                    
                                     </td>
-                                    <td class="border px-4 py-2 text-center">
+                                    <td class="border px-5 py-2 text-center">
                                         <input type="number"
-                                            class="text-center"
+                                            class="text-center w-full px-3 border border-gray-300 rounded-l shadow focus:outline-none focus:ring-2 focus:ring-purple-600"
                                             name="menuDetalles[{{$index}}][cantidad]"
                                             wire:model="menuDetalles.{{$index}}.cantidad" />                                    
                                     </td>
-                                    <td class="border px-4 py-2 text-center">                                    
+                                    <td class="border px-5 py-2 text-center">                                    
                                         <select name="menuDetalles[{{$index}}][medida_id]"
-                                                wire:model="menuDetalles.{{$index}}.medida_id">
-                                            <option value="" class="text-center"><b>Medida: </b></option>
+                                                wire:model="menuDetalles.{{$index}}.medida_id"
+                                                class="py-2 px-1">
+                                            <option value="" class="text-center">Escoja:</option>
                                             @foreach ($medidas as $medida)
                                                 <option value="{{ $medida->id }}" class="text-center">
                                                     {{ $medida->prefijo }}
@@ -60,7 +61,7 @@
                                     <td class="border px-4 py-2 text-center">                                    
                                         <select name="menuDetalles[{{$index}}][alimento_id]"
                                                 wire:model="menuDetalles.{{$index}}.alimento_id">
-                                            <option value="" class="text-center"><b>Alimento: </b></option>
+                                            <option value="" class="text-center">Escoja:</option>
                                             @foreach ($alimentos as $alimento)
                                                 <option value="{{ $alimento->id }}" class="text-center">
                                                     {{ $alimento->nombre }}
@@ -71,7 +72,7 @@
                                     <td class="border px-4 py-2 text-center">                                    
                                         <select name="menuDetalles[{{$index}}][preparacion]"
                                                 wire:model="menuDetalles.{{$index}}.preparacion">
-                                            <option value="" class="text-center"><b>Preparación: </b></option>
+                                            <option value="" class="text-center">Escoja:</option>
                                             @foreach ($preparaciones as $preparacion)
                                                 <option value="{{ $preparacion }}" class="text-center">
                                                     {{ $preparacion }}

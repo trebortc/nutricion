@@ -25,10 +25,10 @@
   <link href="{{ URL::to('/') }}/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="{{ URL::to('/') }}/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="{{ URL::to('/') }}/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
   <!-- Template Main CSS File -->
   <link href="{{ URL::to('/') }}/assets/css/style.css" rel="stylesheet">
-
+  <!-- Livewire css -->
+  @livewireStyles
   <!-- =======================================================
   * Template Name: Medilab - v4.7.0
   * Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
@@ -53,16 +53,16 @@
           <li><a class="nav-link scrollto" href="#services">Alimentos</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contacto</a></li>
           @if (Route::has('login'))
-              @auth
-                <li>
-                  <a class="nav-link scrollto" href="{{ url('/dashboard') }}">&nbsp;Inicio</a>
-                </li>
-              @else
-                <li>
-                  <a class="nav-link scrollto" href="{{ route('login') }}">&nbsp;Ingresar</a>
-                </li>      
-              @endauth
-            @endif
+            @auth
+              <li>
+                <a class="nav-link scrollto" href="{{ url('/dashboard') }}">&nbsp;Inicio</a>
+              </li>
+            @else
+              <li>
+                <a class="nav-link scrollto" href="{{ route('login') }}">&nbsp;Ingresar</a>
+              </li>      
+            @endauth
+          @endif
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

@@ -17,7 +17,6 @@ class Menus extends Component
     public $menu_id;
     public $nombre;
     public $menuDetalles = [];
-    public $datos;
     
     public $alimentos = [];
     public $medidas = [];
@@ -76,7 +75,10 @@ class Menus extends Component
 
     public function borrar($id)
     {
-        Menu::find($id)->delete();
+        // $menu = Menu::find($id)->delete();
+        $menu = Menu::find($id);
+        $menu->menuDetalles()->delete();
+        $menu->delete();
         session()->flash('message', 'Registro eliminado correctamente');
     }
 
@@ -87,8 +89,7 @@ class Menus extends Component
                 'nombre' => $this->nombre,
             ]);
         
-        $menu->menuDetalles()->delete();
-        //$menu->menuDetalles()->saveMany($this->menuDetalles);
+        $menu->menuDetalles()->delete();    
             
         foreach ($this->menuDetalles as $detalle) 
         {

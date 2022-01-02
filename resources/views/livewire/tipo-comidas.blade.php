@@ -35,6 +35,7 @@
                             <th class="px-4 py-2">Nombre</th>
                             <th class="px-4 py-2">Hora inicio</th>
                             <th class="px-4 py-2">Hora fin</th>
+                            <th class="px-4 py-2">Clasificacion</th>
                             <th class="px-4 py-2">Acciones</th>
                         </tr>
                     </thead>
@@ -45,6 +46,7 @@
                                 <td class="border px-4 py-2">{{$tipoComida->nombre}}</td>
                                 <td class="border px-4 py-2">{{$tipoComida->hora_inicio}}</td>
                                 <td class="border px-4 py-2">{{$tipoComida->hora_fin}}</td>
+                                <td class="border px-4 py-2">{{$tipoComida->clasificacion}}</td>
                                 <td class="border px-4 py-2 text-center">   
                                     <x-jet-button wire:click="editar({{$tipoComida->id}})" class="font-bold">
                                         {{ __('Editar') }}

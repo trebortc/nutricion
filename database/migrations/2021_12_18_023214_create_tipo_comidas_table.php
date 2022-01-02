@@ -16,6 +16,7 @@ class CreateTipoComidasTable extends Migration
         Schema::create('tipo_comidas', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
+            $table->enum('clasificacion', ['Bajo peso', 'Normal', 'Sobrepeso', 'Obesidad I', 'Obesidad II', 'Obesidad III', 'Obesidad IV']);    
             $table->time('hora_inicio')->nullable();
             $table->time('hora_fin')->nullable();
             $table->timestamps();

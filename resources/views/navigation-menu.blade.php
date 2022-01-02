@@ -11,14 +11,26 @@
                 </div>
                 @if(Auth::user()->name == 'administrador')
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">                    
-                        <x-jet-nav-link href="{{ route('inicio') }}">
-                            {{ __('Información') }}
+                        <x-jet-nav-link href="{{ route('medidas') }}">
+                            {{ __('Medidas') }}
+                        </x-jet-nav-link>
+                        <x-jet-nav-link href="{{ route('tipo-comidas') }}">
+                            {{ __('Tipo comidas') }}
+                        </x-jet-nav-link>
+                        <x-jet-nav-link href="{{ route('alimentos') }}">
+                            {{ __('Alimentos') }}
+                        </x-jet-nav-link>
+                        <x-jet-nav-link href="{{ route('menus') }}">
+                            {{ __('Menús') }}
+                        </x-jet-nav-link>
+                        <x-jet-nav-link href="{{ route('comidas') }}">
+                            {{ __('Comidas') }}
                         </x-jet-nav-link>
                     </div>
                 @else
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                            {{ __('Control') }}
+                        <x-jet-nav-link href="{{ route('diagnosticos') }}" :active="request()->routeIs('diagnosticos')">
+                            {{ __('Diagnostico') }}
                         </x-jet-nav-link>                   
                         <x-jet-nav-link href="{{ route('inicio') }}">
                             {{ __('Información') }}

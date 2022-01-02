@@ -6,6 +6,9 @@ use App\Http\Livewire\Medidas;
 use App\Http\Livewire\TipoComidas;
 use App\Http\Livewire\Alimentos;
 use App\Http\Livewire\Menus;
+use App\Http\Livewire\Comidas;
+use App\Http\Livewire\Diagnostico;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,6 +29,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function(){
     Route::get('/tipo-comidas', TipoComidas::class)->name('tipo-comidas');
     Route::get('/alimentos', Alimentos::class)->name('alimentos');
     Route::get('/menus', Menus::class)->name('menus');
+    Route::get('/comidas', Comidas::class)->name('comidas');
+    Route::get('/diagnosticos', Diagnostico::class)->name('diagnosticos');
     Route::get('/dashboard', function(){
         return view('dashboard');
     })->name('dashboard');

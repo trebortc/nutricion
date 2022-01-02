@@ -13,6 +13,9 @@ class TipoComidas extends Component
     public $nombre;
     public $horaInicio;
     public $horaFin;
+    public $clasificacion;
+
+    public $tiposSobrePeso;
 
     public $modal = false;
 
@@ -25,6 +28,7 @@ class TipoComidas extends Component
     public function crear()
     {
         $this->limpiarCampos();
+        $this->tiposSobrePeso();
         $this->abrirModal();        
     }
 
@@ -42,7 +46,8 @@ class TipoComidas extends Component
         $this->tipoComida_id = null;
         $this->nombre = '';
         $this->horaInicio = '';
-        $this->horaFin = '';
+        $this->horaFin = ''; 
+        $this->clasificacion = '';       
     }
 
     public function editar($id)
@@ -52,6 +57,7 @@ class TipoComidas extends Component
         $this->nombre = $tipoComida->nombre;
         $this->horaInicio = $tipoComida->hora_inicio;
         $this->horaFin = $tipoComida->hora_fin;
+        $this->clasificacion = $tipoComida->clasificacion;
         $this->abrirModal();
     }
 
@@ -67,7 +73,8 @@ class TipoComidas extends Component
             [
                 'nombre' => $this->nombre,
                 'hora_inicio' => $this->horaInicio,
-                'hora_fin' => $this->horaFin
+                'hora_fin' => $this->horaFin,
+                'clasificacion' => $this->clasificacion
             ]);
          
          session()->flash('message',
@@ -75,6 +82,11 @@ class TipoComidas extends Component
          
          $this->cerrarModal();
          $this->limpiarCampos();
+    }
+
+    public function tiposSobrePeso()
+    {
+        $this->tiposSobrePeso = array('Bajo peso','Normal','Sobrepeso', 'Obesidad I', 'Obesidad II', 'Obesidad III', 'Obesidad IV');
     }
 }
 

@@ -1,6 +1,6 @@
 <div>
     <x-slot name="header">
-        <h1 class="text-gray-900">Menus de comidas</h1>
+        <h1 class="text-gray-900">Comida diaria</h1>
     </x-slot>
 
     <div class="py-3">
@@ -26,26 +26,28 @@
         <div class="max-w-7xl mx-auto sm:px6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg px-4 py-4">
                 @if($modal)                
-                    @include('livewire.menu.crear')
+                    @include('livewire.comida.crear')
                 @endif
                 <table class="table-fixed w-full">
                     <thead>
                         <tr class="bg-gray-50 text-black">
                             <th class="px-4 py-2">Id</th>
-                            <th class="px-4 py-2">Nombre</th>
+                            <th class="px-4 py-2">Tipo comida</th>
+                            <th class="px-4 py-2">Descripcion</th>
                             <th class="px-4 py-2">Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($menus as $menu)        
+                        @foreach($comidas as $comida)        
                             <tr>
-                                <td class="border px-4 py-2">{{$menu->id}}</td>
-                                <td class="border px-4 py-2">{{$menu->nombre}}</td>
+                                <td class="border px-4 py-2">{{$comida->id}}</td>
+                                <td class="border px-4 py-2">{{$comida->tipoComida->nombre}}</td>
+                                <td class="border px-4 py-2">{{$comida->descripcion}}</td>
                                 <td class="border px-4 py-2 text-center">
-                                    <x-jet-button wire:click="editar({{$menu->id}})" class="font-bold">
+                                    <x-jet-button wire:click="editar({{$comida->id}})" class="font-bold">
                                         {{ __('Editar') }}
                                     </x-jet-button>
-                                    <x-jet-danger-button wire:click="borrar({{$menu->id}})" class="font-bold">
+                                    <x-jet-danger-button wire:click="borrar({{$comida->id}})" class="font-bold">
                                         {{ __('Borrar') }}
                                     </x-jet-danger-button>
                                 </td>

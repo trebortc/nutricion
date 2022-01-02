@@ -19,6 +19,19 @@
                     <label for="horaFin" class="block text-gray-700 text-sm font-bold mb-2">Hora fin:</label>
                     <input type="time" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="horaFin" wire:model="horaFin">
                 </div>
+
+                @if(count($tiposSobrePeso) > 0)
+                    <div class="mb-4">
+                        <label class="inline-block w-32 font-bold">Tipo sobre peso:</label>
+                        <select name="clasificacion" wire:model="clasificacion" 
+                            class="w-full leading-tight bg-white border border-gray-400 rounded shadow appearance-none hover:border-gray-500 focus:outline-none focus:shadow-outline">
+                            <option value="">Tipo sobre peso:</option>
+                            @foreach($tiposSobrePeso as $tipoSobrePeso)
+                                <option value="{{ $tipoSobrePeso }}">{{ $tipoSobrePeso }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                @endif
             </div>
         </form>
     </x-slot>

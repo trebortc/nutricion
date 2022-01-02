@@ -5,14 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class TipoComida extends Model
+class ComidaDetalle extends Model
 {
     use HasFactory;
+    
     protected $fillable = [
         'id',
-        'nombre',
-        'hora_inicio',
-        'hora_fin',
-        'clasificacion'
+        'comida_id',
+        'menu_id'
     ];
+
+    public function comida()
+    {
+        return $this->belongsTo(Comida::class);
+    }
 }

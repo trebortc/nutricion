@@ -20,7 +20,7 @@ class CreateComidaDiariasTable extends Migration
             $table->unsignedBigInteger('almuerzo_id');
             $table->unsignedBigInteger('refrigeriopm_id');
             $table->unsignedBigInteger('cena_id');
-            $table->unsignedBigInteger('usuario_id');
+            $table->unsignedBigInteger('user_id');
             $table->date('fecha');
             $table->enum('estado', ['iniciado', 'finalizado']);
             $table->foreign('desayuno_id')->references('id')->on('comidas');
@@ -28,7 +28,7 @@ class CreateComidaDiariasTable extends Migration
             $table->foreign('almuerzo_id')->references('id')->on('comidas');
             $table->foreign('refrigeriopm_id')->references('id')->on('comidas');
             $table->foreign('cena_id')->references('id')->on('comidas');
-            $table->foreign('usuario_id')->references('id')->on('users');            
+            $table->foreign('user_id')->references('id')->on('users');            
             $table->timestamps();
         });
     }

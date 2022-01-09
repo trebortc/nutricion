@@ -63,4 +63,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Diagnostico::class);
     }
+
+    public function comidasDiarias() 
+    {
+        return $this->hasMany(ComidaDiaria::class);
+    }
 }

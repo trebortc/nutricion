@@ -8,7 +8,7 @@ use App\Models\Alimento;
 class Alimentos extends Component
 {
     public $alimentos;
-    public $tiposAlimentos;
+    public $tiposAlimentos = [];
 
     public $alimento_id;
     public $nombre;
@@ -51,6 +51,7 @@ class Alimentos extends Component
         $this->alimento_id = $alimento->id;
         $this->nombre = $alimento->nombre;
         $this->tipo = $alimento->tipo;
+        $this->tiposAlimentos();
         $this->abrirModal();
     }
 

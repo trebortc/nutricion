@@ -15,7 +15,7 @@ class TipoComidas extends Component
     public $horaFin;
     public $clasificacion;
 
-    public $tiposSobrePeso;
+    public $tiposSobrePeso = [];
 
     public $modal = false;
 
@@ -58,6 +58,7 @@ class TipoComidas extends Component
         $this->horaInicio = $tipoComida->hora_inicio;
         $this->horaFin = $tipoComida->hora_fin;
         $this->clasificacion = $tipoComida->clasificacion;
+        $this->tiposSobrePeso();
         $this->abrirModal();
     }
 

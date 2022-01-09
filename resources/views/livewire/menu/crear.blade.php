@@ -23,7 +23,7 @@
                         <thead>
                             <tr>
                                 <th>Porción</th>
-                                <th>Cantid.</th>
+                                <th>Cantidad</th>
                                 <th>Medidas</th>
                                 <th>Alimento</th>
                                 <th>Preparación</th>

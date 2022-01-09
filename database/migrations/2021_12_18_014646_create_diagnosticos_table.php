@@ -18,6 +18,8 @@ class CreateDiagnosticosTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->string('imc', $precision = 8, $scale = 2)->nullable();
             $table->decimal('kcal', $precision = 8, $scale = 2)->nullable();
+            $table->decimal('peso', $precision = 8, $scale = 2)->nullable();
+            $table->decimal('estatura', $precision = 8, $scale = 2)->nullable();
             $table->string('tipo_obesidad')->nullable;            
             $table->foreign('user_id')->references('id')->on('users');    
             $table->timestamps();

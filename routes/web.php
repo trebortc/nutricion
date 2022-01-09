@@ -7,7 +7,7 @@ use App\Http\Livewire\TipoComidas;
 use App\Http\Livewire\Alimentos;
 use App\Http\Livewire\Menus;
 use App\Http\Livewire\Comidas;
-use App\Http\Livewire\Diagnostico;
+use App\Http\Livewire\Diagnosticos;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,7 +30,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function(){
     Route::get('/alimentos', Alimentos::class)->name('alimentos');
     Route::get('/menus', Menus::class)->name('menus');
     Route::get('/comidas', Comidas::class)->name('comidas');
-    Route::get('/diagnosticos', Diagnostico::class)->name('diagnosticos');
+    Route::get('/diagnosticos', Diagnosticos::class)->name('diagnosticos');
     Route::get('/dashboard', function(){
         return view('dashboard');
     })->name('dashboard');

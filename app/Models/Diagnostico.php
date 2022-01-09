@@ -14,6 +14,8 @@ class Diagnostico extends Model
         'user_id',
         'imc',
         'kcal',
+        'peso',
+        'estatura',
         'tipo_obesidad'
     ];
 }

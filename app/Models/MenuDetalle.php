@@ -24,4 +24,14 @@ class MenuDetalle extends Model
         return $this->belongsTo(Menu::class);
     }
 
+    public function alimento()
+    {
+        return $this->belongsTo(Alimento::class);
+    }
+
+    public function medida()
+    {
+        return $this->belongsTo( Medida::class);
+    }
+
 }

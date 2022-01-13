@@ -128,6 +128,10 @@ class Diagnosticos extends Component
                     'user_id' => $this->user->id,
                     'fecha' => now()->modify('+'.$i.' day'),
                     'estado' => 'iniciado',
+                    'estado2' => 'iniciado',
+                    'estado3' => 'iniciado',
+                    'estado4' => 'iniciado',
+                    'estado5' => 'iniciado',
                 ]
             );
         }

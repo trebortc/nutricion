@@ -8,6 +8,8 @@ use App\Http\Livewire\Alimentos;
 use App\Http\Livewire\Menus;
 use App\Http\Livewire\Comidas;
 use App\Http\Livewire\Diagnosticos;
+use App\Http\Livewire\Dietas;
+use App\Http\Livewire\ComidaDiaria;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +33,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function(){
     Route::get('/menus', Menus::class)->name('menus');
     Route::get('/comidas', Comidas::class)->name('comidas');
     Route::get('/diagnosticos', Diagnosticos::class)->name('diagnosticos');
+    Route::get('/dietas', Dietas::class)->name('dietas');
+    Route::get('/comida', ComidaDiaria::class)->name('comida');
     Route::get('/dashboard', function(){
         return view('dashboard');
     })->name('dashboard');

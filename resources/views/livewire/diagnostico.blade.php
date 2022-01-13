@@ -19,22 +19,22 @@
         </div>
     </div>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+    <div class="py-3">
+        <div class="max-w-7xl mx-auto sm:px-8 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <div>
-                    <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <div class="bg-white px-4 pt-5 pb-2 sm:p-6 sm:pb-4">
                         <!-- Peso -->
                         <div class="col-span-6 sm:col-span-4">
                             <x-jet-label for="peso" value="{{ __('Peso(Kg)') }}" />
-                            <x-jet-input id="peso" type="number" step="0.5" class="mt-1 block w-full" wire:model="peso"/>
+                            <x-jet-input id="peso" type="number" step="0.5" class="mt-1 block" wire:model="peso"/>
                             @error('peso') <span class="error">{{ $message }}</span> @enderror
                             <!-- <x-jet-input id="name" type="number" step="0.5" class="mt-1 block w-full" wire:model="pesoTemp"/> -->
                         </div>
                         <!-- Estatura -->
                         <div class="col-span-6 sm:col-span-4">
                             <x-jet-label for="estatura" value="{{ __('Estatura(m)') }}" />
-                            <x-jet-input id="estatura" type="number" step="0.5" class="mt-1 block w-full" wire:model="estatura" />
+                            <x-jet-input id="estatura" type="number" step="0.5" class="mt-1 block" wire:model="estatura" />
                             @error('estatura') <span class="error">{{ $message }}</span> @enderror
                             <!-- <x-jet-input id="email" type="number" step="0.5" class="mt-1 block w-full" wire:model="estatura" /> -->
                         </div><br>
@@ -47,17 +47,17 @@
                     <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                         <div class="col-span-6 sm:col-span-4">
                             <x-jet-label for="imc" value="{{ __('IMC') }}" />
-                            <x-jet-input id="imc" type="number" class="mt-1 block w-full" wire:model="imc"/>
+                            <x-jet-input id="imc" type="number" class="mt-1 block" wire:model="imc"/>
                         </div>
                         <!-- Estatura -->
                         <!-- <div class="col-span-6 sm:col-span-4">
                             <x-jet-label for="kcal" value="{{ __('KCAL') }}" />
-                            <x-jet-input id="kcal" type="number" class="mt-1 block w-full" wire:model="kcal" />
+                            <x-jet-input id="kcal" type="number" class="mt-1 blockw-full" wire:model="kcal" />
                         </div> -->
                         <!-- Obesidad -->
                         <div class="col-span-6 sm:col-span-4">
                             <x-jet-label for="obesidad" value="{{ __('Obesidad') }}" />
-                            <x-jet-input id="obesidad" type="text" class="mt-1 block w-full" wire:model="obesidad" />
+                            <x-jet-input id="obesidad" type="text" class="mt-1 block" wire:model="obesidad" />
                         </div>
                     </div>
                 </div>

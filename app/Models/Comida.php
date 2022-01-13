@@ -24,4 +24,9 @@ class Comida extends Model
     {
         return $this->belongsTo(TipoComida::class);
     }
+
+    public function menu()
+    {
+        return $this->belongsTo(Menu::class);
+    }
 }
